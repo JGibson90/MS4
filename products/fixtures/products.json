@@ -1,0 +1,58 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp0000000001",
+            "name": "Fender American Original 60s Strat Rosewood In Olympic White",
+            "description": "The Fender American Original 60s Strat captures the spirit of an iconic instrument. The years that saw Hendrix rule the guitar world and the Strat grew up and mellowed a bit with the introduction of the Rosewood board. The white scratchplate became mint green and the Maple board became Rosewood but at its heart, the guitar was still clear and articulate with an incredibly 'vocal-like' response. The thick 60s C-shaped neck is perfect for both lead and rhythm playing and the 9.5\" fretboard radius gives you modern playability. Other period-correct features include vintage tall frets and 6-point trem but the switching is a modern 5-way so you can still get all of your favourite Strat tones from the wax-potted Pure Vintage '65 Single Coil pickups.",
+            "price": 1499,
+            "category": 1,
+            "rating": 4.8,
+            "image_url": "https://andertons-productimages.imgix.net/258638-1516024013916.png?w=720&h=720&fit=fill&bg=FFFFFF&auto=format&ixlib=imgixjs-3.3.2",
+            "image": "fender_american_original_60s_strat_olympic_white_rosewood.jpg"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp0000000002",
+            "name": "Fender American Original 50s Strat Maple In White Blonde",
+            "description": "The Fender American Original 50s Strat captures a historic decade of iconic guitar building in one instrument. It's got the original era styling and ground-breaking guitar tones thanks to the wax potted Pure Vintage '59 pickups. The thick soft V neck is perfect for chording and the 9.5\" fretboard radius gives you modern playability. Other period-correct features include vintage tall frets and 6-point trem but the switching is a modern 5-way so you can still get all of your favourite Strat tones.",
+            "price": 1499,
+            "category": 1,
+            "rating": 4.6,
+            "image_url": "https://andertons-productimages.imgix.net/258649-1516024312038.png?w=720&h=720&fit=fill&bg=FFFFFF&auto=format&ixlib=imgixjs-3.3.2",
+            "image": "fender_american_original_50s_strat_white__blonde_maple.jpg"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp0000000003",
+            "name": "Fender American Original 50s Strat in 2-Colour Sunburst",
+            "description": "The Fender American Original 50s Strat captures a historic decade of iconic guitar building in one instrument. It's got the original era styling and ground-breaking guitar tones thanks to the wax potted Pure Vintage '59 pickups. The thick soft V neck is perfect for chording and the 9.5\" fretboard radius gives you modern playability. Other period-correct features include vintage tall frets and 6-point trem but the switching is a modern 5-way so you can still get all of your favourite Strat tones.",
+            "price": 1499,
+            "category": 1,
+            "rating": 4.6,
+            "image_url": "https://andertons-productimages.imgix.net/258443-1515763526719.png?w=720&h=720&fit=fill&bg=FFFFFF&auto=format&ixlib=imgixjs-3.3.2",
+            "image": "fender_american_original_50s_strat_2_colour_sunburst_maple.jpg"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp0000000004",
+            "name": "Fender American Original 60s Strat Rosewood Board In 3-Colour Sunburst",
+            "description": "The Fender American Original 60s Strat captures the spirit of an iconic instrument. The years that saw Hendrix rule the guitar world and the Strat grew up and mellowed a bit with the introduction of the Rosewood board. The white scratchplate became mint green and the Maple board became Rosewood but at its heart, the guitar was still clear and articulate with an incredibly 'vocal-like' response. The thick 60s C-shaped neck is perfect for both lead and rhythm playing and the 9.5\" fretboard radius gives you modern playability. Other period-correct features include vintage tall frets and 6-point trem but the switching is a modern 5-way so you can still get all of your favourite Strat tones from the wax-potted Pure Vintage '65 Single Coil pickups.",
+            "price": 1499,
+            "category": 1,
+            "rating": 4.8,
+            "image_url": "https://andertons-productimages.imgix.net/258644-1516024140901.png?w=720&h=720&fit=fill&bg=FFFFFF&auto=format&ixlib=imgixjs-3.3.2",
+            "image": "fender_american_original_60s_strat_3_colour_sunburst_rosewood.jpg"
+        }
+    }
+]
