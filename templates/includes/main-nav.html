@@ -17,13 +17,13 @@
                 Guitars
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="guitars-link">
-                <a href="" class="dropdown-item">Fender</a>
-                <a href="" class="dropdown-item">Gibson</a>
-                <a href="" class="dropdown-item">PRS</a>
-                <a href="" class="dropdown-item">Ibanez</a>
-                <a href="" class="dropdown-item">ESP</a>
-                <a href="" class="dropdown-item">Other Brands</a>
-                <a href="" class="dropdown-item">All Guitars</a>
+                <a href="{% url 'products' %}?category=fender" class="dropdown-item">Fender</a>
+                <a href="{% url 'products' %}?category=gibson" class="dropdown-item">Gibson</a>
+                <a href="{% url 'products' %}?category=prs" class="dropdown-item">PRS</a>
+                <a href="{% url 'products' %}?category=ibanez" class="dropdown-item">Ibanez</a>
+                <a href="{% url 'products' %}?category=esp" class="dropdown-item">ESP</a>
+                <a href="{% url 'products' %}?category=other_brands" class="dropdown-item">Other Brands</a>
+                <a href="{% url 'products' %}?category=fender,gibson,prs,ibanez,esp,other_brands" class="dropdown-item">All Guitars</a>
             </div>
         </li>
 
@@ -32,11 +32,11 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessory-link">
-                <a href="" class="dropdown-item">Strings</a>
-                <a href="" class="dropdown-item">Plectrums</a>
-                <a href="" class="dropdown-item">Leads</a>
-                <a href="" class="dropdown-item">Other</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=strings" class="dropdown-item">Strings</a>
+                <a href="{% url 'products' %}?category=plectrums" class="dropdown-item">Plectrums</a>
+                <a href="{% url 'products' %}?category=leads" class="dropdown-item">Leads</a>
+                <a href="{% url 'products' %}?category=other_accessories" class="dropdown-item">Other Accessories</a>
+                <a href="{% url 'products' %}?category=strings,plectrums,leads,other_accessories" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
@@ -45,10 +45,10 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
