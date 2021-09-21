@@ -7,19 +7,21 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0003_product_has_sizes'),
-        ('checkout', '0001_initial'),
+        ("products", "0003_product_has_sizes"),
+        ("checkout", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='orderlineitem',
-            name='product',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.product'),
+            model_name="orderlineitem",
+            name="product",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="products.product"
+            ),
         ),
         migrations.AlterField(
-            model_name='orderlineitem',
-            name='product_size',
+            model_name="orderlineitem",
+            name="product_size",
             field=models.CharField(blank=True, max_length=2, null=True),
         ),
     ]
