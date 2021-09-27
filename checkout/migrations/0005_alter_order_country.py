@@ -7,13 +7,13 @@ import django_countries.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('checkout', '0004_auto_20210923_0934'),
+        ("checkout", "0004_auto_20210923_0934"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='order',
-            name='country',
+            model_name="order",
+            name="country",
             field=django_countries.fields.CountryField(max_length=2),
         ),
     ]
