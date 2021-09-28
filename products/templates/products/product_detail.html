@@ -92,14 +92,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                
-                                {% for r in reviews %}
-                                    <h1> {{ r.review_title }} </h1>
-                                    <h1> {{ r.review_body }} </h1>
-                                {% endfor %}
-                            </div>
-
                             <div class="col{% if s %}-12 mt-2{% endif %}">
                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                     <span class="icon">
@@ -113,6 +105,15 @@
                             {% endwith %}
                         </div>
                     </form>
+                </div>
+                <hr>
+                <div class="col-12 col-md-6 col-lg-4">  
+                    <h5 class="logo-font">Reviews</h5>
+                    <hr>                        
+                    {% for r in reviews %}
+                        <h6> {{ r.review_title }} </h6>
+                        <p> {{ r.review_body }} </p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
