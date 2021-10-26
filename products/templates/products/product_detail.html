@@ -44,7 +44,7 @@
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <small class="ml-2">
-                            <a href="{% url 'edit_product' product.id%}">Edit</a>
+                            <a href="{% url 'edit_product' product.id %}">Edit</a>
                             <a class="text-danger ml-2" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
                     {% endif %}
@@ -107,12 +107,21 @@
                     </form>
                 </div>
                 <hr>
-                <div class="col-12 col-md-6 col-lg-4">  
+                <div class="col">  
                     <h5 class="logo-font">Reviews</h5>
                     <hr>                        
                     {% for r in reviews %}
                         <h6> {{ r.review_title }} </h6>
                         <p> {{ r.review_body }} </p>
+                        {% if request.user.is_superuser %}
+                            <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="">
+                                <span class="text-uppercase">Edit Review</span>
+                            </a>
+                            <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'delete_review' product.id %}">
+                                <span class="text-uppercase">Delete Review</span>
+                            </a>
+                        {% endif %}
+                        <hr>
                     {% endfor %}
                 </div>
             </div>
