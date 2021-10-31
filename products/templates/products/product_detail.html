@@ -111,10 +111,11 @@
                     <h5 class="logo-font">Reviews</h5>
                     <hr>                        
                     {% for r in reviews %}
-                        <h6> {{ r.review_title }} </h6>
-                        <p> {{ r.review_body }} </p>
+                        <h6><u>{{ r.review_title }}</u></h6>
+                        <p>{{ r.review_body }}</p>
+                        <p><strong>Review by:</strong> {{ r.review_by }}</p>
                         {% if request.user.is_superuser %}
-                            <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="">
+                            <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'edit_review' r.id %}">
                                 <span class="text-uppercase">Edit Review</span>
                             </a>
                             <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'delete_review' product.id %}">

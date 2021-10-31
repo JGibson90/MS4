@@ -8,17 +8,6 @@ from .forms import ReviewForm
 # Create your views here.
 
 
-def reviews(request):
-    """A view to show all reviews"""
-
-    reviews = Review.objects.all()
-    template = "reviews/reviews.html"
-    context = {
-        "reviews": reviews,
-    }
-
-    return render(request, template, context)
-
 
 @login_required
 def add_review(request):
@@ -66,7 +55,7 @@ def edit_review(request, review_id):
     template = "reviews/edit_review.html"
     context = {
         "form": form,
-        "review": review.product,
+        "review": review,
     }
 
     return render(request, template, context)
