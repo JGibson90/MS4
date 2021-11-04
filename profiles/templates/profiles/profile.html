@@ -55,7 +55,7 @@
                             {% for order in orders %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'order_history' order.order_number%}"
+                                        <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
@@ -67,16 +67,17 @@
                                                 <li class="small">
                                                     {% if item.product.has_sizes %}
                                                         Size {{ item.product.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                    {% endif %}{{ item.product.name }} x {{ item.quantity }}
                                                 </li>
-                                            {% endfor %}
+                                            
                                         </ul>
                                     </td>
                                     <td>£{{ order.grand_total }}</td>
                                     <td>
-                                        <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'add_review' %}">
+                                        <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'add_review' item.product.id %}">
                                             <span class="text-uppercase">Add Review</span>
                                         </a>
+                                            {% endfor %}
                                     </td>
                                 </tr>
                             {% endfor %}
