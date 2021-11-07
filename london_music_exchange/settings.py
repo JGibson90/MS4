@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-b+mx*70@n+*@k29_^rb8w+27tl)xgci(#zj$)$3k&ca+-3xxo=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://ms4--london-music-exchange.herokuapp.com/", "*"]
 
 
 # Application definition
