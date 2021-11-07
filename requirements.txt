@@ -22,3 +22,4 @@ silx==0.15.2
 sqlparse==0.4.2
 stripe==2.60.0
 whitenoise==5.3.0
+gunicorn==20.1.0
