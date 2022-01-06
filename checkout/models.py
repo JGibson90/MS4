@@ -8,6 +8,7 @@ from django_countries.fields import CountryField
 
 from products.models import Product
 from profiles.models import UserProfile
+from coupon.models import Coupon
 
 
 class Order(models.Model):
@@ -40,6 +41,7 @@ class Order(models.Model):
     )
     original_bag = models.TextField(null=False, blank=False, default="")
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
+    coupon = Coupon
 
     def _generate_order_number(self):
         """
