@@ -8,6 +8,17 @@ from .models import Blog
 from .forms import BlogForm
 
 
+def blog(request):
+    """ A view to show the blogs """
+    blog = Blog.objects.get()
+    template = "blog/blog.html"
+    context = {
+        "blog": blog,
+    }
+
+    return render(request, template, context)
+
+
 @login_required
 def add_blog(request):
     """Add a blog post"""
@@ -52,7 +63,7 @@ def edit_blog(request, blog_id):
             )
     else:
         form = BlogForm(instance=blog)
-        messages.info(request, "You are editing your blog post")
+        messages.info(request, f"You are editing your blog post {blog.blog_title}")
 
     template = "blog/edit_blog.html"
     context = {
