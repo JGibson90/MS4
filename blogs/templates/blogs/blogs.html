@@ -32,6 +32,14 @@
                             <p>
                                 {{ b.blog_body | linebreaks }}
                             </p>
+                            {% if request.user.is_superuser %}
+                                <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'edit_blog' b.id %}">
+                                    <span class="text-uppercase">Edit Blog</span>
+                                </a>
+                                <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'delete_blog' b.id %}">
+                                    <span class="text-uppercase">Delete Blog</span>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}

@@ -22,16 +22,20 @@ def blogs(request):
 @login_required
 def add_blog(request):
     """Add a blog post"""
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
+
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
-            blogs = form.save(commit=False)
-            blogs.blog_by = request.user
+            blog = form.save(commit=False)
+            blog.blog_by = request.user
 
-            blogs.save()
+            blog.save()
 
             messages.success(request, "Successfully added blog post!")
-            return redirect(reverse("blogs", args=[blog.id]))
+            return redirect(reverse("blogs"))
         else:
             messages.error(
                 request, "Failed to add blog post. Please ensure the form is valid."
@@ -50,6 +54,10 @@ def add_blog(request):
 @login_required
 def edit_blog(request, blog_id):
     """Edit a blog post"""
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
+
     blogs = get_object_or_404(Blog, pk=blog_id)
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES, instance=blogs)
@@ -77,7 +85,11 @@ def edit_blog(request, blog_id):
 @login_required
 def delete_blog(request, blog_id):
     """Delete a blog post that has already been submitted"""
-    blogs = get_object_or_404(Blog, pk=blog_id)
-    blogs.delete()
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
+
+    blog = get_object_or_404(Blog, pk=blog_id)
+    blog.delete()
     messages.success(request, "Blog post deleted!")
-    return redirect(reverse("blogs", args=[blog.blog.id]))
+    return redirect(reverse("blogs"))
