@@ -8,12 +8,12 @@ from .models import Blog
 from .forms import BlogForm
 
 
-def blog(request):
+def blogs(request):
     """ A view to show the blogs """
-    blog = Blog.objects.get()
-    template = "blog/blog.html"
+    blogs = Blog.objects.all()
+    template = "blogs/blogs.html"
     context = {
-        "blog": blog,
+        "blogs": blogs,
     }
 
     return render(request, template, context)
@@ -23,15 +23,15 @@ def blog(request):
 def add_blog(request):
     """Add a blog post"""
     if request.method == "POST":
-        form = BlogForm(request.POST)
+        form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
-            blog = form.save(commit=False)
-            blog.blog_by = request.user
+            blogs = form.save(commit=False)
+            blogs.blog_by = request.user
 
-            blog.save()
+            blogs.save()
 
             messages.success(request, "Successfully added blog post!")
-            return redirect(reverse("home"))
+            return redirect(reverse("blogs", args=[blog.id]))
         else:
             messages.error(
                 request, "Failed to add blog post. Please ensure the form is valid."
@@ -39,7 +39,7 @@ def add_blog(request):
     else:
         form = BlogForm()
 
-    template = "reviews/add_blog.html"
+    template = "blogs/add_blog.html"
     context = {
         "form": form,
     }
@@ -50,25 +50,25 @@ def add_blog(request):
 @login_required
 def edit_blog(request, blog_id):
     """Edit a blog post"""
-    blog = get_object_or_404(Blog)
+    blogs = get_object_or_404(Blog, pk=blog_id)
     if request.method == "POST":
-        form = BlogForm(request.POST, request.FILES, instance=blog)
+        form = BlogForm(request.POST, request.FILES, instance=blogs)
         if form.is_valid():
             form.save()
             messages.success(request, "Successfully updated blog post!")
-            return redirect(reverse("blog", args=[blog.blog.id]))
+            return redirect(reverse("blogs", args=[blogs]))
         else:
             messages.error(
                 request, "Failed to update blog post. Please ensure the form is valid."
             )
     else:
-        form = BlogForm(instance=blog)
-        messages.info(request, f"You are editing your blog post {blog.blog_title}")
+        form = BlogForm(instance=blogs)
+        messages.info(request, f"You are editing your blog post {blogs.blog_title}")
 
-    template = "blog/edit_blog.html"
+    template = "blogs/edit_blog.html"
     context = {
         "form": form,
-        "blog": blog,
+        "blogs": blogs,
     }
 
     return render(request, template, context)
@@ -77,7 +77,7 @@ def edit_blog(request, blog_id):
 @login_required
 def delete_blog(request, blog_id):
     """Delete a blog post that has already been submitted"""
-    blog = get_object_or_404(Blog, pk=blog_id)
-    blog.delete()
+    blogs = get_object_or_404(Blog, pk=blog_id)
+    blogs.delete()
     messages.success(request, "Blog post deleted!")
-    return redirect(reverse("blog", args=[blog.blog.id]))
+    return redirect(reverse("blogs", args=[blog.blog.id]))

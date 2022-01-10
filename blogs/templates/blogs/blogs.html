@@ -20,19 +20,21 @@
         </div>
         <div class="row">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2">
+                {% for b in blogs %}
+                    <div class="row mt-1 mb-2">
                         <div class="col">
-                            <h3>
-                                {{ blog.blog_title }}
-                            </h3>
+                            <h3><u>
+                                {{ b.blog_title }}
+                            </u></h3>
                             <h6>
-                                Blog post by: {{ blog.blog_by }}
+                                Blog post by: {{ b.blog_by }}
                             </h6>
                             <p>
-                                {{ blog.blog_body | linebreaks }}
+                                {{ b.blog_body | linebreaks }}
                             </p>
                         </div>
-                </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
