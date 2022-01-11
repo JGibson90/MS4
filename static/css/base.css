@@ -179,10 +179,102 @@ input[name="q"]::placeholder {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
-    max-width: 80%;
-  }
+        max-width: 80%;
+    }
 }
 
+/* Media query to fix page header being hidden on different screen sizes */
+/* @media screen and (max-width: 360px){
+    .page-header {
+        margin-top: 150px;
+    }
+}
+
+@media screen and (min-width: 361px) and (max-width: 418px){
+    .page-header {
+        margin-top: 90px;
+    }
+}
+  
+@media screen and (min-width: 419px) and (max-width: 440px){
+    .page-header {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 464px){
+    .page-header {
+        margin-top: 40px;
+    }
+}
+@media screen and (min-width: 465px) and (max-width: 991px){
+    .page-header {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1400px){
+    .page-header {
+        margin-top: 25px;
+    }
+} */
+
+/* Media query to fix page header being partially hidden on smaller screen sizes */
+@media screen and (min-width:270px) and (max-width: 287px){
+    .page-header {
+        margin-top: 210px;
+    }
+}
+
+@media screen and (min-width:288px) and (max-width: 393px){
+    .page-header {
+        margin-top: 150px;
+    }
+}
+
+
+@media screen and (min-width: 394px) and (max-width: 449px){
+    .page-header {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 464px){
+    .page-header {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 465px) and (max-width: 991px){
+    .page-header {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1413px){
+    .page-header {
+        margin-top: 30px;
+    }
+}
+
+/* Media query to fix product image being partially hidden on smaller screen sizes */
+@media screen and (max-width: 362px){
+    .content-margin-top {
+        margin-top: 120px;
+    }
+}
+
+@media screen and (min-width: 363px) and (max-width: 418px){
+    .content-margin-top {
+        margin-top: 60px;
+    }
+}
+
+@media screen and (min-width: 419px) and (max-width: 464px){
+    .content-margin-top {
+        margin-top: 20px;
+    }
+}
 /* -------------------------------- Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -289,4 +381,8 @@ input[name="q"]::placeholder {
     body {
         height: calc(100vh - 116px);
     }
+}
+
+@media (max-width: 464px) {
+    
 }
