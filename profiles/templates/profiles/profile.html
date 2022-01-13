@@ -19,7 +19,7 @@
         <div class="row page-header">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
+                <h2 class="logo-font text-blue mb-4">My Profile</h2>
                 <hr>
             </div>
         </div>
@@ -29,13 +29,13 @@
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
+                    <a href="{% url 'products' %}" class="btn btn-outline-blue rounded-0">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                    <button class="btn btn-blue rounded-0 text-uppercase float-right">Update Information</button>
                 </form>
             </div>
             <div class="col-12 col-lg-6">
@@ -74,7 +74,7 @@
                                     </td>
                                     <td>£{{ order.grand_total }}</td>
                                     <td>
-                                        <a class="btn btn-outline-black rounded-0 mt-2 mb-2" href="{% url 'add_review' item.product.id %}">
+                                        <a class="btn btn-outline-blue rounded-0 mt-2 mb-2" href="{% url 'add_review' item.product.id %}">
                                             <span class="text-uppercase">Add Review</span>
                                         </a>
                                             {% endfor %}

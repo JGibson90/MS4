@@ -3,11 +3,15 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background: url('/media/hero-image.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+}
+
+ul {
+    padding-left: 0;
 }
 
 /* -------------------------------- from Bulma */
@@ -23,54 +27,63 @@ body {
     text-transform: uppercase;
 }
 
+.hero-text {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.title-font {
+    color: #0C4160 !important;
+}
+
 .main-logo-link {
     width: fit-content;
 }
 
 .shop-now-button {
-    background: black;
+    background: #0C4160;
     color: white;
     min-width: 260px;
 }
 
-.btn-black {
-    background: black;
+.btn-blue {
+    background: #0C4160;
     color: white;
 }
 
-.btn-outline-black {
+.btn-outline-blue {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    color: #071330 !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #0C4160;
 }
 
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
+.btn-outline-blue:hover,
+.btn-outline-blue:active,
+.btn-outline-blue:focus {
+    background: #0C4160;
     color: white !important;
 }
 
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
+    background: #0C4160;
     color: white !important;
 }
 
-.text-black {
-    color: #000 !important;
+.text-blue {
+    color: #0C4160 !important;
 }
 
-.border-black {
-    border: 1px solid black !important;
+.border-blue {
+    border: 1px solid #0C4160 !important;
 }
 
-.bg-black {
-    background: #000 !important;
+.bg-blue {
+    background: #0C4160 !important;
 }
 
 .overlay {
@@ -84,7 +97,7 @@ body {
 }
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
+    background: #0C4160 !important;
     color: #fff !important;
 }
 
@@ -129,7 +142,7 @@ input[name="q"]::placeholder {
     height: 0; 
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid #0C4160;
     position: absolute;
     top: -10px;
     right: 36px;
@@ -249,11 +262,11 @@ input[name="q"]::placeholder {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d: /* text-secondary */
+    color: #6c757d; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
-    border-color: #000;
+    border-color: #071330;
     border-radius: 0;
 }
 
@@ -292,7 +305,7 @@ input[name="q"]::placeholder {
 .allauth-form-inner-content input[type='submit']:hover {	
 	color: #fff;
     background-color: #222;
-    border-color: #222;
+    border-color: #071330;
 }
 
 .allauth-form-inner-content a {
