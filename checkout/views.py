@@ -10,8 +10,6 @@ from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
-from coupon.models import Coupon
-from coupon.forms import CouponForm
 
 import stripe
 import json
@@ -43,8 +41,6 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    coupon_form = CouponForm(request.POST)
-    coupon = Coupon
     if request.method == "POST":
         bag = request.session.get("bag", {})
 
@@ -155,8 +151,6 @@ def checkout(request):
         "order_form": order_form,
         "stripe_public_key": stripe_public_key,
         "client_secret": intent.client_secret,
-        "coupon_form": coupon_form,
-        "coupon": coupon,
     }
 
     return render(request, template, context)
