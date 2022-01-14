@@ -29,7 +29,7 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="lead mb-0 font-weight-bold">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left text-blue font-weight-bold">£{{ product.price }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -111,14 +111,9 @@
                     <h5 class="logo-font text-blue">Reviews</h5>
                     <hr>                        
                     {% for r in reviews %}
-                    <!-- This still needs work, if not remove the if/else statement and the <p> in the else statement -->
-                        {% if r %}
-                            <h6><u>{{ r.review_title }}</u></h6>
-                            <p>{{ r.review_body }}</p>
-                            <p><strong>Review by:</strong> {{ r.review_by }}</p>
-                        {% else %}
-                            <p>There are currently no reviews for this product</p>
-                        {% endif %}
+                        <h6><u>{{ r.review_title }}</u></h6>
+                        <p>{{ r.review_body }}</p>
+                        <p><strong>Review by:</strong> {{ r.review_by }}</p>
                         {% if request.user.is_superuser %}
                             <a class="btn btn-outline-blue rounded-0 mt-2 mb-2" href="{% url 'edit_review' r.id %}">
                                 <span class="text-uppercase">Edit Review</span>
@@ -127,6 +122,8 @@
                                 <span class="text-uppercase">Delete Review</span>
                             </a>
                         {% endif %}
+                    {% empty %}
+                        <p>There are currently no reviews for this product</p>
                         <hr>
                     {% endfor %}
                 </div>
