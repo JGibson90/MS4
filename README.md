@@ -115,10 +115,9 @@ Python code passed the [PEP8](http://pep8online.com/) compliance test
 
 3. As a user, I want to be able to easily interact with the site and the applications within
 
-    1. The user is presented with a simple register and log in template with only two inputs required: username and password
-    2. The add recipe page has a simple layout with the minimum number of inputs needed
-    3. The edit recipe page has the same layout as the edit recipe page with 3 large buttons clearly labelled and spaced out 
-    to avoid accidentally clicking on an action that the user doesn't wish to use
+    1. The user is presented with a simple register and log in template
+    2. The product templates have a number of ways of sorting (by price, name, rating etc)
+    3. The product detail template has intuitive buttons for the user to increase quantity and add to bag
 
 ## Further Testing 
 - The project was tested on Google Chrome, Mozilla Firefox, Safari for iOS and Microsoft Edge.
@@ -128,16 +127,14 @@ Python code passed the [PEP8](http://pep8online.com/) compliance test
 # Bugs
 Following on from Testing I also encountered these bugs.
 ## During development
-- Recipe info page wouldn't display the selected recipe after following the link from the previous page
-    - My mentor helped me decipher where my app.route function was not targeting the correct information
-- Default Materialize footer taking up a large portion of the bottom of the site
-    - Removed the `<ul>` from the default footer and replaced with simple `<a>` tags containing Font Awesome icons 
+
 
 
 # Deployment
 
-**Grubs' Up!** was developed on **Gitpod**, using **GitHub** to host the repository, **MongoDB** to host the database 
-and finally deployed via **Heroku**.
+**London Music Exchange** was developed on **Gitpod**, using **GitHub** to host the repository, **MySQL** to 
+initially develop the database before moving to **Postgres** and finally deployed via **Heroku**. **AWS** was used to 
+host the static/media files.
 These were the steps taken to successfully deploy the website.
 - First, open up your **IDE** of preference, open the **terminal** window and type: ``pip3 freeze -- local > requirements.txt.``
 - Also in terminal window of your IDE type: ``python app.py > Procfile``
@@ -149,7 +146,13 @@ button, after which you will be prompted to give a name to your app and select y
 - Underneath that you will be able to search for your repository and then click the **Connect** button once you have selected it
 - Scroll back up and click on the tab named **Settings** and then the button named **Reveal Config Vars**
     - You will now need to enter all the variables and their values contained in your `env.py` file i.e.
-    (**IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME, ADMIN**)
+    (**SECRET_KEY, STRIPE_SECRET_KEY, USE_AWS** etc)
+- You will need to set up an AWS account and a bucket in S3.
+    - Make sure public access is NOT blocked
+    - Add security policy
+    - Create a user to access the bucket
+    - Add user to a group
+- In Heroku ensure all config vars from AWS/Stripe etc are included
 - Go back to your **IDE** and add, commit and push both the `Procfile` and the `requirements.txt` to your repository
 - Now return to the **Deploy** tab in Heroku and click on **Enable Automatic Deployment**
 - Underneath that under **Manual Deploy** click on **Deploy Branch** button and your app should successfully deploy to Heroku
@@ -163,12 +166,6 @@ button, after which you will be prompted to give a name to your app and select y
 - Specify a new **path directory** where you want to put the clone
 - Type `git clone` and then **paste** the previously copied url from before
 
-- Sign up and Log in to MongoDB
-- Create a new cluster using an appropriate Cloud Provider for yourself
-- Click the **Collections** tab and then the **Create Database** button
-- Choose a name for your database and your first **collection**
-- Populate your collection with key value pairs
-
 # Credits
 
 ## Code
@@ -179,13 +176,15 @@ responsive on different devices.
 
 ## Images
 - The hero background image came from
-[Pexels.](https://www.pexels.com/photo/fruit-salads-in-plate-1640774/)
-
-## Websites
+[Fender](https://www.fender.com/en-GB/start)
 
 ## Products
 
 - All products were from [Andertons](https://www.andertons.co.uk/)
+
+## Blog
+
+- Blog post was from [Engadget](https://www.engadget.com/winter-namm-2022-delayed-to-june-205550724.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAH0TANTqSqOF3_c8A4O9-xLrfcFCL3A9aUakF_urSzyG-G53JuZ1FWYLR6PaKophCIl-2opOG8orUhnoplMp0cw6qeTZcORW9Y3ywn_pa1QwaT4RWqVbBMDufw0mtU7KPHElea82E55xXJAeb7a8nP9vdGgoBY159OOVYAwUL_ct)
 
 # Special Thanks
 
