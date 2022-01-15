@@ -9,7 +9,7 @@ from .forms import BlogForm
 
 
 def blogs(request):
-    """ A view to show the blogs """
+    """A view to show the blogs"""
     blogs = Blog.objects.all()
     template = "blogs/blogs.html"
     context = {
