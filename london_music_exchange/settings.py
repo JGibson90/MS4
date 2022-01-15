@@ -120,15 +120,11 @@ WSGI_APPLICATION = "london_music_exchange.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://hceoygookdyour:44d72e03489a68efde47b17d62f18965f9400cc9731ee747185bf18e77014f31@ec2-54-216-17-9.eu-west-1.compute.amazonaws.com:5432/dc6c3spqflpugu')
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
 }
 
 
