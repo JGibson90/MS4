@@ -28,7 +28,8 @@ def add_review(request, product_id):
             return redirect(reverse("home"))
         else:
             messages.error(
-                request, "Failed to add review. Please ensure the form is valid."
+                request, (
+                    "Failed to add review. Please ensure the form is valid.")
             )
     else:
         form = ReviewForm()
@@ -47,18 +48,21 @@ def edit_review(request, review_id):
     """Edit a product review"""
     review = get_object_or_404(Review, pk=review_id)
     if request.method == "POST":
-        form = ReviewForm(request.POST, request.FILES, instance=review)
+        form = ReviewForm(
+            request.POST, request.FILES, instance=review)
         if form.is_valid():
             form.save()
             messages.success(request, "Successfully updated review!")
-            return redirect(reverse("product_detail", args=[review.product.id]))
+            return redirect(
+                reverse("product_detail", args=[review.product.id]))
         else:
-            messages.error(
-                request, "Failed to update review. Please ensure the form is valid."
+            messages.error(request, (
+                "Failed to update review. Please ensure the form is valid.")
             )
     else:
         form = ReviewForm(instance=review)
-        messages.info(request, f"You are editing your review for {review.product.name}")
+        messages.info(
+            request, f"You are editing your review for {review.product.name}")
 
     template = "reviews/edit_review.html"
     context = {
